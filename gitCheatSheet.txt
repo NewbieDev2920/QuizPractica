@@ -1,0 +1,66 @@
+//Configuracion Inicial Git
+git config --global user.name <nombre>
+git config --global user.email <email>
+
+//Inicializar Git
+git init (<directory> opcional)
+
+//Descargar repositorio
+git clone <url>
+
+//Añadir a stage
+git add <file>
+
+//Commit
+git commit -m "Mensaje de commit"
+
+//Borrar
+rm <file>
+
+//Directorio actual
+pwd
+
+//cambiar Directorio
+cd
+
+//revision de directorios
+ls
+dir
+
+//Revisar repositorios
+git status
+git log
+git log --oneline
+git diff
+
+//revisar rama
+git branch
+
+//Crear rama
+git checkout -b  <branch nombre>
+
+//cambiar a rama
+git checkout <branch>
+
+//mostrar contenido archivo
+cat <file>
+
+//Mover archivo
+mv <file>
+
+//Regresar del stage
+git reset <file>
+
+//Regresar accion en el historial al ultimo commit
+git checkout -- <file>
+
+//Modificar commits
+git commit --amend (se clickea i para editar textos)
+
+//Traer codigo
+git fetch 
+git pull (git fetch + git merge)
+
+//PUSH & PULL
+git push <nombre del remoto> <rama>
+git pull <nombre del remoto> <rama>
