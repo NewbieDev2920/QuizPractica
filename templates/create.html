@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Carlos De la Rosa" />
+    <meta name="description" content="here you create your own quizzes for other people to solve." />
+    <link rel="stylesheet" href="/static/css/create_style.css">
+    <script type = "module" src="/create.js"></script>
+    <title>Create</title>
+  </head>
+  <body>
+    <header>
+      <div class = "logo-container">
+        <div>
+            <h1 class = "logo-item">QuizzLobby</h1>
+            <img class="logo-item" src = "/static/images/sherlock.png" alt="Sherlock Holmes">
+        </div>
+        <nav id = "navbar" class = "logo-item">
+          <a class="logo-item" href="index.html">Quizzes</a>
+          <a class = "logo-item" href="create.html">Create</a>
+          <a class = "logo-item" href="leaderboards.html">Leaderboards</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class = "player-container">
+        <div class = "creator-box" id = "creator-box">
+          <h2 onclick="questionCreator()">Create your Quizz</h2>
+          <form class = "quizz-form" name = "create" onsubmit="return getNameAndDescription()">
+            <label for = "quizz-name">Name</label>
+            <input type="text" id="quizz-name" name = "quizz-name" required>
+            <label for = "quizz-description">Description</label>
+            <input type="text" id = "quizz-description" name = "quizz-description" required>
+            <input type="submit" value="Create">
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

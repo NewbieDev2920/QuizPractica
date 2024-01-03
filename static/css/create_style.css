@@ -1,0 +1,108 @@
+* {
+    margin : 0;
+    padding : 0 ; 
+    font-family: sans-serif;
+}
+
+body{
+    background-color: #f4fce2;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aliceblue;
+    border: solid rgb(184, 188, 192);
+    border-radius: 0px 0px 5px 5px;
+}
+
+.logo-container div{
+    display: flex;
+}
+
+img[ class = "logo-item"]{
+    width: 4%;
+    height: 4%;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.logo-item{
+    margin: 15px 15px 5px 15px;
+}
+
+.player-container {
+    width: 60vw;
+    height: 80vh;
+    background-color: aliceblue;
+    border: 2px solid rgb(184, 188, 192);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.quizz-form{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 90px;
+}
+
+.creator-box h2{
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+#quizz-name, #quizz-description{
+    border-radius: 3px;
+    margin: 10px;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form[name = "create-question"]{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-input{
+    background-color: rgba(166, 166, 166, 0.679);
+    padding : 25px;
+    border: none; 
+    
+    margin-bottom: 30px;
+    border-radius: 1.5px;
+}
+
+/* Aqui debe estar la desactivacion del borde de los campos de texto mientras estan activos(concentrados) */
+
+.create-input:focus{
+    outline: none;
+    border-bottom: black 2px solid;
+}
+
+.answer-container{
+    display:grid;
+    grid-template-columns: auto auto;
+    column-gap: 80px;
+    row-gap: 2px; 
+}
+
+.button-container button{
+    background-color: green;
+    color: white;
+    font-family:monospace;
+    margin: 0px 5px 0px 5px;
+    border-radius: 2px;
+    padding: 5px;
+}
