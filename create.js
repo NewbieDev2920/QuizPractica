@@ -1,18 +1,21 @@
-let QuizQuestions = new Map();
+
 let quiz = {
   name: undefined,
   author: undefined,
   description: undefined,
-  questions: QuizQuestions,
-  answerKey: undefined,
+  questions: [],
+  answerKey: [],
 };
 
 const getNameAndDescription = () => {
-  event.preventDefault()
+  event.preventDefault();
   quiz.name = document.forms["create"]["quizz-name"].value;
   quiz.description = document.forms["create"]["quizz-description"].value;
-  if(quiz.name != "" && quiz.description != ""){
-     questionCreator()
+  if (quiz.name != "" && quiz.description != "") {
+    questionCreator();
+  }
+  else{
+    alert("Debes ponerle nombre y descripcion a tu quiz!");
   }
 };
 
@@ -41,31 +44,60 @@ const questionCreator = () => {
           </div>     
           
      </form>`;
-     instructions.setAttribute("style","display: none;");
+  instructions.setAttribute("style", "display: none;");
 };
 
 const addQuestion = () => {
-  event.preventDefault();
-  input = document.getElementsByClassName("create-input");
-  let question = input[0].value;
+  // Transform to map
 
-  if (QuizQuestions.length > 0) {
-    QuizQuestions.forEach((value, key) => {
+  event.preventDefault();
+  let inputCollection = document.getElementsByClassName("create-input");
+  let question = inputCollection[0].value;
+  console.log(quiz.questions.length);
+  if (quiz.questions.length > 0) {
+    quiz.questions.forEach((value, key) => {
       if (key == question) {
-        alert("No se puede agregar preguntas repitidas!");
+        alert("No se pueden agregar preguntas repitidas!");
       }
     });
   }
 
-  let answer = [];
-  for (let i = 1; i < input.length; i++) {
-    answer.push(input[i].value);
+  let answers = [];
+  for (let i = 1; i < inputCollection.length; i++) {
+    answers.push(inputCollection[i].value);
   }
-  QuizQuestions.set(question, answer);
-  console.log(QuizQuestions);
+  let bundle = [];
+  bundle.push(question, answers);
+  quiz.questions.push(bundle);
+  console.log(quiz.questions);
+
+  // Transform to matrix
+
+  let checkboxes = document.getElementsByClassName("create-answer");
+  let answerCollection = [];
+
+  for (let i = 0; i < checkboxes.length; i++) {
+    answerCollection.push(checkboxes[i].checked);
+  }
+
+  quiz.answerKey.push(answerCollection);
+  console.log(quiz.answerKey);
+  resetInput(inputCollection, checkboxes)
 };
 
 const finish = () => {
   event.preventDefault();
-  localStorage.setItem(quiz.name, quiz);
+  localStorage.setItem(quiz.name, JSON.stringify(quiz));
+  console.log(localStorage);
+  alert("Tu quiz fue creado!");
+  fetch("templates\index.html");
+};
+
+const resetInput = (HTMLinputs, HTMLcheckboxes) => {
+  for (let i = 0; i < HTMLinputs.length; i++) {
+    HTMLinputs[i].value = "";
+  }
+  for (let i = 0; i < HTMLinputs.length; i++) {
+    HTMLcheckboxes[i].checked = false;
+  }
 };

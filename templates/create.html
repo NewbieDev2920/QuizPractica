@@ -29,12 +29,12 @@
     <main>
       <div class = "player-container">
         <div class = "creator-box" id = "creator-box">
-          <h2 onclick="questionCreator()">Create your Quizz</h2>
+          <h2>Create your Quizz</h2>
           <form class = "quizz-form" name = "create" onsubmit="return getNameAndDescription()">
             <label for = "quizz-name">Name</label>
-            <input type="text" id="quizz-name" name = "quizz-name" maxlength="16" required>
+            <input type="text" id="quizz-name" name = "quizz-name" maxlength="16" autocomplete="off">
             <label for = "quizz-description">Description</label>
-            <textarea id = "quizz-description" name = "quizz-description" placeholder="add a short description" maxlength="64" required>asd</textarea>
+            <textarea id = "quizz-description" name = "quizz-description" placeholder="add a short description" maxlength="64"></textarea>
             <input type="submit" value="Create">
           </form>
         </div>
