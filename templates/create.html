@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/static/css/create_style.css">
     <script type = "text/javascript" src="/create.js"></script>
     <title>Create</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -29,11 +32,18 @@
           <h2 onclick="questionCreator()">Create your Quizz</h2>
           <form class = "quizz-form" name = "create" onsubmit="return getNameAndDescription()">
             <label for = "quizz-name">Name</label>
-            <input type="text" id="quizz-name" name = "quizz-name" required>
+            <input type="text" id="quizz-name" name = "quizz-name" maxlength="16" required>
             <label for = "quizz-description">Description</label>
-            <input type="text" id = "quizz-description" name = "quizz-description" required>
+            <textarea id = "quizz-description" name = "quizz-description" placeholder="add a short description" maxlength="64" required>asd</textarea>
             <input type="submit" value="Create">
           </form>
+        </div>
+        <div id = "create-instructions">
+          <ul>
+            <li>Write the questions an the answers of your quiz</li>
+            <li>markup the checkboxes for indicating the correct answers</li>
+            <li>have fun!</li>
+          </ul>
         </div>
       </div>
     </main>

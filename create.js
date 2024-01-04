@@ -1,9 +1,9 @@
 let QuizQuestions = new Map();
 let quiz = {
-  name: quizzName,
+  name: undefined,
   author: undefined,
-  description: descrip,
-  questions: quizQuestions,
+  description: undefined,
+  questions: QuizQuestions,
   answerKey: undefined,
 };
 
@@ -18,20 +18,21 @@ const getNameAndDescription = () => {
 
 const questionCreator = () => {
   let creatorBox = document.getElementById("creator-box");
+  let instructions = document.getElementById("create-instructions");
   creatorBox.innerHTML = `
      <form name = "create-question">
           <div class = "question-container">
-          <input type = "text" id = "pregunta" placeholder = "Write the question here" class = "create-input" autocomplete = "off">
+          <input type = "text" id = "pregunta" placeholder = "Write your question here" class = "create-input" autocomplete = "off">
           </div>
           <div class = "answer-container">
-               <input type = "text" placeholder = "Write the answer here" class = "create-input">
-               <input type = "checkbox">
-               <input type = "text" placeholder = "Write the answer here" class = "create-input">
-               <input type = "checkbox">
-               <input type = "text" placeholder = "Write the answer here" class = "create-input">
-               <input type = "checkbox">
-               <input type = "text" placeholder = "Write the answer here" class = "create-input">
-               <input type  = "checkbox">
+               <input type = "text" placeholder = "Write your answer here" class = "create-input">
+               <input type = "checkbox" class = "create-answer">
+               <input type = "text" placeholder = "Write your answer here" class = "create-input">
+               <input type = "checkbox" class = "create-answer">
+               <input type = "text" placeholder = "Write your answer here" class = "create-input">
+               <input type = "checkbox" class = "create-answer">
+               <input type = "text" placeholder = "Write your answer here" class = "create-input">
+               <input type  = "checkbox" class = "create-answer">
           </div>
           <div class = "button-container">
                <button>Previous Question</button>
@@ -40,6 +41,7 @@ const questionCreator = () => {
           </div>     
           
      </form>`;
+     instructions.setAttribute("style","display: none;");
 };
 
 const addQuestion = () => {

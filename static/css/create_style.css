@@ -1,19 +1,32 @@
 * {
     margin : 0;
     padding : 0 ; 
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
+:root{
+    /* Paleta de colores */
+    --rust: #B56357;
+    --mint: #B4DBC0;
+    --slate: #EAE3EA;
+    --darkerSlate: #a7a6a7;
+    --lighterSlate: #ebe1eb;
+    --seafoam: #A7B3A5;
+    --seagrass: #7ea279;
+
+}
+
+
 body{
-    background-color: #f4fce2;
+    background-color: var(--seafoam);
 }
 
 .logo-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: aliceblue;
-    border: solid rgb(184, 188, 192);
+    background-color: var(--slate);
+    border: 1.5px solid var(--darkerSlate);
     border-radius: 0px 0px 5px 5px;
 }
 
@@ -38,10 +51,11 @@ a{
 .player-container {
     width: 60vw;
     height: 80vh;
-    background-color: aliceblue;
-    border: 2px solid rgb(184, 188, 192);
+    background-color: var(--slate);
+    border: 2px solid var(--darkerSlate);
     border-radius: 12px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items:center;
 }
@@ -62,6 +76,10 @@ a{
     margin: 10px;
 }
 
+#quizz-description{
+    height: 5em;
+}
+
 main{
     height: 100vh;
     display: flex;
@@ -76,10 +94,11 @@ form[name = "create-question"]{
 }
 
 .create-input{
-    background-color: rgba(166, 166, 166, 0.679);
+    /* background-color: rgba(166, 166, 166, 0.679); */
+    background-color: var(--darkerSlate);
     padding : 25px;
+    width: 20em;
     border: none; 
-    
     margin-bottom: 30px;
     border-radius: 1.5px;
 }
@@ -99,10 +118,37 @@ form[name = "create-question"]{
 }
 
 .button-container button{
-    background-color: green;
+    background-color: var(--seagrass);
     color: white;
-    font-family:monospace;
+    font-family: 'Inter', sans-serif;
     margin: 0px 5px 0px 5px;
     border-radius: 2px;
     padding: 5px;
+}
+
+.create-answer{
+    margin-top: 25px;
+    cursor: pointer;
+    appearance: none;
+    height: 1em;
+    width: 1em;
+    border-radius: 0.2em;
+    border: 2px solid black;
+}
+
+.create-answer:checked{
+    background-color: green;
+}
+
+input[value = "Create"]{
+    background-color: var(--seagrass);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0px 5px 0px 5px;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+textarea{
+    resize: none;
 }

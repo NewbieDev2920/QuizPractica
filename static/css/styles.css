@@ -1,20 +1,32 @@
-* { 
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+* {
+    margin : 0;
+    padding : 0 ; 
+    font-family: 'Inter', sans-serif;
+}
+
+:root{
+    /* Paleta de colores */
+    --rust: #B56357;
+    --mint: #B4DBC0;
+    --slate: #EAE3EA;
+    --darkerSlate: #a7a6a7;
+    --lighterSlate: #ebe1eb;
+    --seafoam: #A7B3A5;
+    --seagrass: #7ea279;
+
 }
 
 body {
-    background-color: #f4fce2;
+    background-color: var(--seafoam);
 }
 
 .logo-container{
     border-radius: 0px 0px 5px 5px;
-    background-color: aliceblue;
+    background-color: var(--slate);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: solid rgb(184, 188, 192);
+    border: solid var(--darkerSlate);
 
 }
 
@@ -35,8 +47,8 @@ h1[ class = "logo-item"]{
 .player-container { 
     width: 60vw;
     height: 80vh;
-    background-color: aliceblue;
-    border: 2px solid rgb(184, 188, 192);
+    background-color: var(--slate);
+    border: 2px solid var(--darkerSlate);
     border-radius: 12px ;
     display: flex;
     align-items: center;
@@ -62,13 +74,14 @@ main {
 .quizz-browser {
     width: 50vw;
     height: 70vh;
-    background-color: rgb(220, 223, 227);
+    background-color: var(--lighterSlate);
     border-radius: 12px; 
+    border: 2px solid var(--darkerSlate);
     overflow-y: auto;
 }
 
 .quizz-browser > :nth-child(even){
-    background-color: rgb(175, 180, 186);
+    background-color: var(--darkerSlate);
     height: 10vh;
 }
 
@@ -82,10 +95,6 @@ main {
     align-items: center;
     list-style: none;
 
-}
-
-.quizz-info:hover{
-    border: 2.5px dashed rgb(59, 59, 181);
 }
 
 .info-name{
@@ -105,15 +114,15 @@ main {
 }
 
 .info-play button{
-    padding: 9px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 500;
-    border: 1.5px solid rgb(140, 145, 150);
-    border-radius: 3px;
-    background-color: #aabfaa;
+    background-color: var(--seagrass);
+    color: black;
+    font-family: 'Inter', sans-serif;
+    margin: 0px 5px 0px 5px;
+    border-radius: 2px;
+    padding: 5px;
 }
 
 .info-play button:hover{
-    border: 2.5px solid #f4fce2;
+    background-color: var(--mint);
 }
 
