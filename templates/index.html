@@ -10,9 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- El src es temporaneo mientras se incorpora Flask -->
+    <script type = "text/javascript" src="{{ url_for('static', filename = 'browser.js') }}"></script>
     <title>QuizLobby</title>
   </head>
-  <body>
+  <body onload="addQuizzes()">
     <header>
       <div class="logo-container">
         <div>
@@ -33,20 +35,9 @@
     </header>
     <main>
       <div class="player-container">
-        <div class="quizz-browser">
-          <ul class="quizz-info">
-            <li class="info-name">Q</li>
-            <li class="info-author">Carlos De la Rosa</li>
-            <li class="info-play"><button>Play</button></li>
-          </ul>
-          <ul class="quizz-info">
-            <li class="info-name">xdddd rtx</li>
-            <li class="info-author">Mateo</li>
-            <li class="info-play"><button>Play</button></li>
-          </ul>
+        <div id="quizz-browser">
         </div>
       </div>
     </main>
-    <script src="/main.js"></script>
   </body>
 </html>

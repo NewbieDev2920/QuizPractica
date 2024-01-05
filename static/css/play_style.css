@@ -1,6 +1,6 @@
-* {
-    margin : 0;
-    padding : 0 ; 
+*{
+    margin: 0;
+    padding: 0;
     font-family: 'Inter', sans-serif;
 }
 
@@ -13,11 +13,18 @@
     --lighterSlate: #ebe1eb;
     --seafoam: #A7B3A5;
     --seagrass: #7ea279;
-
+    --playerblue: #d9f2ec;
 }
 
-body {
+body{
     background-color: var(--seafoam);
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo-container{
@@ -51,8 +58,16 @@ h1[ class = "logo-item"]{
     border: 2px solid var(--darkerSlate);
     border-radius: 12px ;
     display: flex;
+    flex-direction: column;
+    gap: 50px;
     align-items: center;
     justify-content: center;
+}
+
+.player-container p{
+    font-size: 0.8em;
+    border-bottom: 1px solid black;
+    padding-bottom: 6px;
 }
 
 .logo-item{
@@ -64,55 +79,39 @@ a{
     color: black;
 }
 
-main {
-    height: 100vh;
+#game{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    
 }
 
-#quizz-browser {
-    width: 50vw;
-    height: 70vh;
-    background-color: var(--lighterSlate);
-    border-radius: 12px; 
-    border: 2px solid var(--darkerSlate);
-    overflow-y: auto;
+#game div{
+    margin:20px
 }
 
-#quizz-browser > :nth-child(even){
-    background-color: var(--darkerSlate);
-    height: 10vh;
+.game-question{
+
 }
 
-#quizz-browser > :nth-child(odd){
-    height: 10vh;
+.game-answers form{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
 }
 
-.quizz-info{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
+/* Botones de respuesta */
+.game-answers form button{
+    width: 280px;
+    height: 90px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 8px;
 }
 
-.info-name{
-    display: inline-block;
-    margin: 0px 0px 0px 45px;
-    width: 240px;
+.game-answers form button:hover{
+    background-color: var(--playerblue);
 }
 
-.info-author{
-    display: inline-block;
-    margin: 0px 0px 0px 160px;
-}
-
-.info-play{
-    display: inline-block;
-    margin: 0px 45px 0px 0px;
-}
-
-.info-play button{
+.game-buttons button{
     background-color: var(--seagrass);
     color: black;
     font-family: 'Inter', sans-serif;
@@ -121,7 +120,8 @@ main {
     padding: 5px;
 }
 
-.info-play button:hover{
+.game-buttons button:hover{
     background-color: var(--mint);
 }
+
 
